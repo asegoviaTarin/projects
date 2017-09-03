@@ -1,0 +1,38 @@
+<div style="    padding-left: 59px; padding-right: 59px;">
+  <div class="jumbotron ">
+    <h1>Favoritos</h1>
+    <div class="row">
+      <div class="card-deck">
+        <div class="card" ng-repeat="favorito in controller.favoritos">
+          <div class="card-body">
+            <h4 class="card-title">{{favorito.title}}</h4>
+            <p class="card-text">{{favorito.description}}</p>
+            <a [href]="favorito.url">{{favorito.url }}</a>
+          </div>
+          <button type="button" class="btn btn-danger" ng-click="controller.borrarFav(favorito._id)">borrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  <ul class="list-group" *ngFor="let favorito of favoritos">
+    <li class="list-group-item"></li>
+    <li class="list-group-item">{{favorito.description}}</li>
+    <li class="list-group-item">{{favorito.url }}</li>
+   
+    <hr>
+  < /ul>-->
+  <h3>
+  Añadir favorito
+</h3> 
+<div class="row">
+  <div class="col-md-3">
+titulo:
+  <input class="form-control form-control-sm" type="text" ng-model="controller.nuevoFavorito.title"> url:
+  <input class="form-control form-control-sm" type="text" ng-model="controller.nuevoFavorito.url"> descripcion:
+  <input class="form-control form-control-sm" type="text" ng-model="controller.nuevoFavorito.description">
+  </div>
+  <div class="col-md-5">
+  <button ng-click="controller.newFav()" type="button" class="btn btn-primary"> añadir </button>
+  </div>
+  </div>
+</div>
