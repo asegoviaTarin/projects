@@ -1,0 +1,110 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> {{nombre}}</td>
+        <td> uppercase</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}}</td>
+        <td> lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}}</td>
+        <td> slice:3</td>
+        <td>{{nombre | slice:3}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}}</td>
+        <td> slice:0,3</td>
+        <td>{{nombre | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td> {{array}}</td>
+        <td> slice:0,3</td>
+        <td>{{array | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td> {{PI}}</td>
+        <td> number: 1.2-12 </td>
+        <td>{{PI | number:'1.2-12'}}</td>
+      </tr>
+      <tr>
+        <td> {{myNumber}}</td>
+        <td> percent </td>
+        <td>{{myNumber | percent: '2.2-12'}}</td>
+      </tr>
+      <tr>
+        <td> {{myNumber}}</td>
+        <td> percent </td>
+        <td>{{myNumber | currency:'USD':true:'4.2-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{currencyNumber1}}</td>
+        <td> currency </td>
+        <td>{{currencyNumber1 | currency:'USD':false}}</td>
+      </tr>
+      <tr>
+        <td> {{myNumber}}</td>
+        <td> currency </td>
+        <td>{{myNumber | currency:'EUR':true:'4.2-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{currencyNumber1}}</td>
+        <td> currency </td>
+        <td>{{currencyNumber1 | currency:'EUR':false}}</td>
+      </tr>
+      <tr>
+        <td> {{valorPromesa}}</td>
+        <td> async </td>
+        <td>{{valorPromesa | async}}</td>
+      </tr>
+      <tr>
+        <td> {{fecha}}</td>
+        <td> Fecha castellano </td>
+        <td>{{fecha | date:'dd/MMMM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td> {{nombreminus}}</td>
+        <td> Mi filtro Capitalizado </td>
+        <td>{{nombreminus | capitalizado:true }}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}}</td>
+        <td>contraseña:{{activar}} </td>
+        <td>{{nombre | pass:activar }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-lg-9"></div>
+    <div class="col-lg-3">
+      <div class="col-lg-2 col-lg-push-10 ">
+        <div class="pull-right"><button type="button" class="btn btn-primary" (click)="activar =!activar">enable/disable pass</button></div>
+      </div>
+    </div>
+</div>
+
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of array | slice:5:20"> {{item}}</li>
+  </ul>
+  <h4>Json</h4>
+  <pre>
+    {{myObject | json}}
+  </pre>
+  <h4>video</h4>
+  <iframe width="560" height="315" [src]="video  | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
+</div>
