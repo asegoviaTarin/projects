@@ -1,6 +1,6 @@
 # projects
 
-Estos son algunos de mis proyectos
+Remider angular Js projects
 1. Backend Favoritos NodeJS-> api resful favoritos
 2. SPA Favoritos angularJS ->SPA que se comunica con el backend con la tecnología angularjs
 3. SPA Favoritos angular ->SPA que se comunica con el backend con la tecnología angular2
